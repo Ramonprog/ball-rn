@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, TouchableOpacity } from "react-native";
+import { styles } from "./styles";
 
 export default function App() {
+  const handleForceButton = () => {};
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.area}></View>
+      <View style={styles.control}>
+        <View>
+          <Text style={styles.controlText}>UpeForce:</Text>
+          <Text style={styles.controlText}>Velocity:</Text>
+          <Text style={styles.controlText}>PostY</Text>
+        </View>
+        <TouchableOpacity
+          style={styles.controlButton}
+          onPress={handleForceButton}
+        >
+          <Text style={styles.controlbuttonText}>Fazer foça</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
